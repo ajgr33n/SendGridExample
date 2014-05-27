@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Email Spoofer</title>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<style>
+	body {clear:both; float:left; padding:0; margin:0;}
+	h2 {padding:10px; margin:10px;}
+	.main {width:380px; padding:10px; margin:10px;}
+	.item {padding:10px; margin:5px; width:150px;}
+	.whole {width:338px}
+	</style>
+</head>
+	<body>
+	<h2>Transactional Email Spoof</h2>
+		<div class="main">
+			<div class="relaxed">
+				<form action="/" id="emailForm">
+					<input class="item" type="text" name="from" id="from" placeholder="From">
+					<input class="item" type="text" name="from_name" id="from_name" placeholder="From Name">
+					<input class="item" type="text" name="to" id="to" placeholder="To">
+					<input class="item" type="text" name="reply_to" id="reply_to" placeholder="Reply To">
+					<br/><br/>
+					<input class="item whole" type="text" name="subject" id="subject" placeholder="Subject">
+					<input class="item whole" type="text" name="html" id="html" placeholder="Message">
+					<br/><br/>
+					<input class="item" id="fs" type="submit" value="Send">
+				</form>
+			</div>
+		</div>
+		<!-- the result of the search will be rendered inside this div -->
+		<div>
+			<span id="results"></span>
+		</div>
+			<script type='text/javascript'>
+			// Attach a submit handler to the form
+			$( "#emailForm" ).submit(function( event ) {
+				// Stop form from submitting normally
+				event.preventDefault();
+				$("#fs").attr("disabled", "disabled");
+
+				var posting = $.post( 'http://losslessdesign.com/sg/email_engine.php', $( "#emailForm" ).serialize() );
+
+				posting.done(function() {
+					alert("Email Complete!");
+					$("#fs").removeAttr("disabled");
+					document.getElementById("emailForm").reset();
+				});
+			});
+			</script>
+	</body>
+</html>
