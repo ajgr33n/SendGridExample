@@ -1,7 +1,6 @@
 <?php
     require 'sendgrid-php/sendgrid-php.php';
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
