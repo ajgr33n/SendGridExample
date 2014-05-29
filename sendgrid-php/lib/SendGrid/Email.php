@@ -1,7 +1,7 @@
 <?php
 
 namespace SendGrid;
-
+ 
 class Email {
 
   public $to, 
@@ -360,7 +360,6 @@ class Email {
         $web['files['.$full_filename.']'] = $contents;
       };
     }
-
     return $web;
   }
 
