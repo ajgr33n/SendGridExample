@@ -1,5 +1,5 @@
 # Sendgrid-php
-
+ 
 This library allows you to quickly and easily send emails through SendGrid using PHP.
 
 WARNING: This module was recently upgraded from [1.1.7](https://github.com/sendgrid/sendgrid-php/tree/v1.1.7) to 2.0.3. There were API breaking changes for various method names. See [usage](https://github.com/sendgrid/sendgrid-php#usage) for up to date method names.
