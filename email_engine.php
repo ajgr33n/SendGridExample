@@ -21,6 +21,4 @@
 
                 $response = $sendgrid->send($email);
 
-
             ?>
-
