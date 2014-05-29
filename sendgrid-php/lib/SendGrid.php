@@ -16,7 +16,7 @@ class SendGrid {
     $this->password = $password;
     $this->options  = $options;
   }
-
+ 
   public function send(SendGrid\Email $email) {
     $form             = $email->toWebFormat();
     $form['api_user'] = $this->username; 
